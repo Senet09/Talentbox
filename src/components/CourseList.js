@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from "../fcc_primary_large.svg";
-import toast from 'react-hot-toast'; // Import toast
+import toast from 'react-hot-toast';
 
 const CourseList = () => {
   const [courses, setCourses] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/v1/courses')
+    axios.get('http://ec2-13-200-110-133.ap-south-1.compute.amazonaws.com:8000/api/v1/courses')
       .then((response) => {
         const fetchedCourses = response.data.data;
         setCourses(fetchedCourses);
@@ -20,14 +20,11 @@ const CourseList = () => {
   }, []);
 
   const handleLogout = () => {
-    // Add your logout logic here (e.g., clearing user data, redirecting to the login page)
-    // For now, we'll just redirect to the login page and show a toast
     localStorage.removeItem("signin-token");
     navigate('/');
     toast.success('Logout successful');
     window.location.reload();
 
-    // Show a toast notification for logout success
   };
 
   return (

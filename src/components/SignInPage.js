@@ -8,7 +8,7 @@ import { setToken } from "../slices/user";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "../Signup.css";
 
-const Backend_Url = "http://localhost:8000/api/v1/login";
+const Backend_Url = "http://ec2-13-200-110-133.ap-south-1.compute.amazonaws.com/api/v1/login";
 
 function Signin() {
   const navi = useNavigate();
