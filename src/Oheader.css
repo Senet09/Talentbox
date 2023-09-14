@@ -1,0 +1,16 @@
+.Oheader {
+  background-color:  #0a0a23;
+  color: #fff; 
+  padding: 10px;
+  text-align: center;
+}
+
+.Oheader-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.Ocentered-content {
+  display: flex;
+  align-items: center;
+}
