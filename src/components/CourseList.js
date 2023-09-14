@@ -9,7 +9,7 @@ const CourseList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://ec2-13-200-110-133.ap-south-1.compute.amazonaws.com:8000/api/v1/courses')
+    axios.get('https://api.pollerhub.com/api/v1/courses')
       .then((response) => {
         const fetchedCourses = response.data.data;
         setCourses(fetchedCourses);
